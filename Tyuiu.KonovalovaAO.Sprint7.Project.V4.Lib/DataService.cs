@@ -10,35 +10,25 @@ namespace Tyuiu.KonovalovaAO.Sprint7.Project.V4.Lib
     {
         public string[,] LoadFromFileData(string filePath)
         {
-            string fileDta = File.ReadAllText(filePath);
-            fileDta = fileDta.Replace('\n', '\r');
-            string[] lines = fileDta.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            if (lines.Length < 2)
-            {
-                return null;
-            }
+            string fileData = File.ReadAllText(filePath, Encoding.Default);
 
-            int rows, cols;
-            rows = lines.Length  1;
-            cols = lines[0].Split(';').Length;
+            fileData = fileData.Replace('\n', '\r');
+            string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[,] arrayValues = new string[rows, cols];
+            int rows = lines.Length;
+            int colums = lines[0].Split(';').Length;
 
-            for (int i = 1; i < lines.Length; i++)
+            string[,] arrayValues = new string[rows, colums];
+
+            for (int i = 0; i < rows; i++)
             {
                 string[] line_r = lines[i].Split(';');
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < colums; j++)
                 {
-                    arrayValues[i  1, j] = Convert.ToString(line_r[j]);
+                    arrayValues[i, j] = line_r[j];
                 }
             }
-
             return arrayValues;
-        }
-
-        public string[,] GetMatrix(string v, object path)
-        {
-            throw new NotImplementedException();
         }
     }
 }
