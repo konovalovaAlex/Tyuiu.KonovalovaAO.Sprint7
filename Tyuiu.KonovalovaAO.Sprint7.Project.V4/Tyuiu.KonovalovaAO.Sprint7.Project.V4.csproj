@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +85,18 @@
       <Project>{d8a2c462-5250-423d-847b-791a836ae0e0}</Project>
       <Name>Tyuiu.KonovalovaAO.Sprint7.Project.V4.Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Безымянный-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-png.ru-358.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-paper-reading-like-a-writer-book-information-book-ink-photography.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
